@@ -5,25 +5,31 @@
 
 .container {
     max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+
+:link:hover {
+    cursor: pointer;
+  }
+/* add flex and right menu-position */
 header {
     background-color: #0C0C0E;
-    height: 90px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: nowrap;
 }
 
 nav {
-    /* height: 90px; */
     display: flex;
-
+    height: 90px;
 }
 
-.logo {
-    display: flex;
+h1 {
     font-family: Forum, serif;
     color: #FFFFFF;
     font-size: 30px;
@@ -35,9 +41,7 @@ nav {
 }
 
 .menu {
-    width: 584px;
     display: flex;
-    justify-content: space-around;
     flex-wrap: nowrap;
     list-style-type: none;
     font-family: Inter, sans-serif;
@@ -47,5 +51,17 @@ nav {
     line-height: 50px;
     letter-spacing: 0em;
     text-align: left;
-    padding-left: 454px;
+}
+
+.menu-item {
+    padding-left: 30px;
+}
+
+.icon-profile {
+    color: #FFFFFF;
+    padding-left: 40px;
+}
+
+.image-menu {
+    list-style-type: none;
 }
