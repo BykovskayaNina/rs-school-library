@@ -3,6 +3,10 @@
     src: url("../fonts/Inter-VariableFont_slnt,wght");
   } */
 
+* {
+    box-sizing: border-box;
+}
+
 .container {
     max-width: 1440px;
     display: flex;
@@ -18,14 +22,17 @@ a {
 :link:hover {
     cursor: pointer;
   }
-/* add flex and right menu-position */
+
 header {
     background-color: #0C0C0E;
     display: flex;
+    justify-content: end;
+    max-width: 1440px;
 }
 
 nav {
     display: flex;
+    flex-wrap: nowrap;
     height: 90px;
 }
 
@@ -38,6 +45,30 @@ h1 {
     letter-spacing: 0.02em;
     text-align: left;
     padding-left: 20px;
+    margin-right: auto;
+}
+
+.welcome-bg {
+    position: absolute;
+    background-color: #0C0C0E;
+    width: 600px;
+    height: 220px;
+    top: 220px;
+    padding: 35px 40px 35px 40px;
+
+}
+
+.welcome-text {
+    font-family: Forum;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 3px;  
+    text-align: center;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    margin: auto;
+    padding: 35px 40px;
 }
 
 .menu {
@@ -51,6 +82,7 @@ h1 {
     line-height: 50px;
     letter-spacing: 0em;
     text-align: left;
+    margin-right: auto;
 }
 
 .menu-item {
@@ -60,15 +92,12 @@ h1 {
 .icon-profile {
     color: #FFFFFF;
     padding-left: 40px;
+    align-items: end;
 }
 
 ul {
     list-style-type: none;
 }
-
-/* .image-menu {
-    list-style-type: none;
-} */
 
 h2 {
     margin: 20px, 40px;
@@ -78,7 +107,6 @@ h2 {
     line-height: 50px;
     letter-spacing: 3px;
     text-align: center;
-    /* text-decoration-line: underline; */
 }
 
 h2::after {
@@ -87,7 +115,6 @@ h2::after {
     width: 50px;
     padding-top: 10px;
     border-bottom: 1px solid #0C0C0E;
-    /* text-align: center; */
     margin: auto; 
 }
 
@@ -102,9 +129,6 @@ section {
     justify-content: space-between;
 }
 
-/* .favorites-books {
-} */
-
 span {
     font-family: Inter;
     font-size: 20px;
@@ -112,6 +136,70 @@ span {
     line-height: 40px;
     letter-spacing: 0em;
     text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.carousel-pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.slide-pagination-active {
+    background-color: #BB945F;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.slide-pagination {
+    background-color: #0C0C0E;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.favorites-seasons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    margin: 0;
+    /* text-align: left; */
+}
+
+input {
+    margin-right: 25px;
+}
+
+input[type=radio]:checked + span{
+    font-weight: bold;
+  }
+
+  input[type=radio]:checked {
+    accent-color: #000000;
+  }
+
+.pick-favorites {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 20px;
+}
+
+.book-names {
+    padding-bottom: 15px;
 }
 
 .staff-picks {
@@ -130,7 +218,62 @@ span {
     padding-top: 10px;
     border-bottom: 1px solid #BB945F;
     text-align: center;
-    
+}
+
+.favorites-books {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0px, 20px;
+}
+
+.favorites-books-item {
+    position: relative;
+    border: 1px solid #0C0C0E;
+    padding: 20px;
+    margin-bottom: 40px;
+    width: 505px;
+    text-align: left;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start; */
+}
+
+.book-description {
+    max-width: 355px;
+}
+
+.book-cover {
+    position: absolute; 
+    bottom: -1px;
+    right: -40px;
+}
+
+.button-buy {
+    border: 1px solid #0C0C0E;
+    padding: 9px 27px;
+    font-family: Inter;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 12px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    position: relative;
+}
+
+.button-buy-active {
+    border: 1px solid #BB945F;
+    color: #BB945F;
+    padding: 9px 27px;
+    font-family: Inter;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 12px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    position: relative;
 }
 
 p {
@@ -140,5 +283,20 @@ p {
     line-height: 40px;
     letter-spacing: 2px;
     text-align: left;
+}
 
+.menu-shop {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.menu-list-item::after {
+    content: "";
+    display: block;
+    width: 60px;
+    padding-top: 10px;
+    border-bottom: 1px solid #BB945F;
+    text-align: center;
 }
